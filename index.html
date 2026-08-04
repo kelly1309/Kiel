@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Ezekiele Austria | Portfolio</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:
+linear-gradient(135deg,#090909,#1c1c1c,#2e2e2e);
+color:white;
+overflow-x:hidden;
+}
+
+/*
+NAVBAR
+*/
+
+.navbar{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+width:90%;
+padding:18px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.15);
+border-radius:18px;
+z-index:999;
+transition:.4s;
+}
+
+.logo{
+font-size:24px;
+font-weight:700;
+color:white;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+margin-left:25px;
+font-weight:500;
+transition:.3s;
+position:relative;
+}
+
+nav a:hover{
+color:#d7d7d7;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+bottom:-5px;
+left:0;
+width:0;
+height:2px;
+background:white;
+transition:.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+/*====================
+HERO
+=====================*/
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:120px 8% 60px;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:#777;
+filter:blur(180px);
+opacity:.25;
+left:-150px;
+top:-100px;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:#aaa;
+filter:blur(180px);
+opacity:.15;
+right:-120px;
+bottom:-120px;
+}
+
+.hero-content{
+display:flex;
+justify-content:space-between;
+align-items:center;
+width:100%;
+z-index:2;
+gap:70px;
+}
+
+/*====================
+TEXT
+=====================*/
+
+.hero-text{
+flex:1;
+animation:slideLeft 1.2s;
+}
+
+.hero-text h1{
+font-size:65px;
+font-weight:700;
+margin-bottom:20px;
+}
+
+.hero-text span{
+color:#bfbfbf;
+}
+
+.hero-text p{
+font-size:20px;
+line-height:35px;
+color:#d6d6d6;
+}
+
+/*====================
+PHOTO
+=====================*/
+
+.hero-image{
+flex:1;
+display:flex;
+justify-content:center;
+animation:slideRight 1.3s;
+}
+
+.hero-image img{
+width:420px;
+border-radius:30px;
+background:rgba(255,255,255,.08);
+padding:18px;
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.18);
+box-shadow:
+0 25px 60px rgba(0,0,0,.45);
+animation:floating 4s ease-in-out infinite;
+transition:.4s;
+}
+
+.hero-image img:hover{
+transform:scale(1.05);
+}
+
+/*====================
+BUTTON
+=====================*/
+
+.btn-main{
+display:inline-block;
+margin-top:35px;
+padding:15px 35px;
+border-radius:40px;
+background:white; 
+color:black;
+font-weight:600;
+text-decoration:none;
+transition:.35s;
+}
+
+.btn-main:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 30px rgba(255,255,255,.25);
+}
+
+/*====================
+SECTION TITLE
+=====================*/
+
+.section-title{
+font-size:45px;
+text-align:center;
+margin:90px 0 40px;
+font-weight:700;
+}
+
+/*====================
+GLASS CARD
+=====================*/
+
+.glass{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(16px);
+border:1px solid rgba(255,255,255,.12);
+border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+
+/*====================
+ANIMATIONS
+=====================*/
+
+@keyframes floating{
+0%{transform:translateY(0);}
+50%{transform:translateY(-18px);}
+100%{transform:translateY(0);}
+}
+
+@keyframes slideLeft{
+from{
+opacity:0;
+transform:translateX(-60px);
+}
+to{
+opacity:1;
+transform:translateX(0);
+}
+}
+
+@keyframes slideRight{
+from{
+opacity:0;
+transform:translateX(60px);
+}
+to{
+opacity:1;
+transform:translateX(0);
+}
+}
+
+/*====================
+RESPONSIVE
+=====================*/
+
+@media(max-width:991px){
+.hero-content{
+flex-direction:column-reverse;
+text-align:center;
+}
+.hero-text{
+max-width:100%;
+}
+.hero-text h1{
+font-size:42px;
+}
+.hero-image img{
+width:300px;
+}
+.navbar{
+padding:15px;
+}
+nav a{
+margin-left:12px;
+font-size:14px;
+}
+}
+
+/* SERVICES */
+
+.service-box{
+display:flex;
+gap:30px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.service-box video{
+width:260px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.4);
+transition:.4s;
+}
+
+.service-box img{
+width:260px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.4);
+transition:.4s;
+}
+
+.service-box img:hover,
+.service-box video:hover{
+transform:scale(1.05);
+}
+
+.service-box h3{
+margin-bottom:15px;
+font-size:28px;
+font-weight:600;
+}
+
+.service-box p{
+font-size:18px;
+line-height:30px;
+color:#ddd;
+}
+
+.accordion-button{
+background:rgba(255,255,255,.08) !important;
+color:white !important;
+backdrop-filter:blur(10px);
+border:none;
+font-size:20px;
+font-weight:600;
+padding:20px;
+}
+
+.accordion-button:not(.collapsed){
+background:rgba(255,255,255,.15) !important;
+}
+
+.accordion-button:focus{
+box-shadow:none;
+}
+
+.accordion-body{
+background:rgba(255,255,255,.05);
+color:white;
+border-radius:0 0 15px 15px;
+padding:25px;
+}
+
+
+/*==========================
+GALLERY
+==========================*/
+
+.gallery-card{
+padding:45px;
+border-radius:25px;
+}
+
+.certificate-img{
+display:block;
+margin:auto;
+width:75%;
+max-width:850px;
+border-radius:20px;
+border:2px solid rgba(255,255,255,.15);
+box-shadow:0 20px 40px rgba(0,0,0,.45);
+transition:.45s;
+}
+
+.certificate-img:hover{
+transform:scale(1.03);
+box-shadow:0 30px 60px rgba(0,0,0,.55);
+}
+
+.carousel-item{
+padding:30px 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+width:55px;
+height:55px;
+background-color:rgba(255,255,255,.15);
+border-radius:50%;
+backdrop-filter:blur(12px);
+padding:25px;
+transition:.35s;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon{
+background:white;
+transform:scale(1.15);
+}
+
+.carousel{
+animation:fadeGallery 1s;
+}
+
+@keyframes fadeGallery{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/*==========================
+CONTACT
+==========================*/
+
+.contact-card{  
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:60px;
+gap:50px;
+border-radius:30px;
+}
+
+.contact-left{
+flex:1;
+}
+
+.contact-left h2{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.contact-left p{
+font-size:18px;
+line-height:32px;
+color:#ddd;
+}
+
+.contact-info{
+margin-top:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.info-box{
+background:rgba(255,255,255,.08);
+padding:25px;
+border-radius:18px;
+backdrop-filter:blur(15px);
+transition:.35s;
+}
+
+.info-box:hover{
+transform:translateY(-8px);
+background:rgba(255,255,255,.12);
+}
+
+.info-box h4{
+margin-bottom:10px;
+font-size:20px;
+}
+
+.contact-right{
+flex:1;
+display:flex;
+justify-content:center;
+}
+
+.contact-photo{
+width:350px;
+border-radius:25px;
+padding:15px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+box-shadow:0 20px 45px rgba(0,0,0,.45);
+animation:floating 4s ease-in-out infinite;
+}
+
+/*==========================
+FOOTER
+==========================*/
+
+footer{
+margin-top:80px;
+padding:35px;
+text-align:center;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+footer p{
+font-size:16px;
+color:#d8d8d8;
+text-align:center;
+}
+
+/*==========================
+BACK TO TOP
+==========================*/
+
+.top-btn{
+position:fixed;
+right:25px;
+bottom:25px;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+font-size:24px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(15px);
+color:white;
+transition:.35s;
+box-shadow:0 15px 30px rgba(0,0,0,.35);
+}
+
+.top-btn:hover{
+transform:translateY(-8px) scale(1.1);
+background:white;
+color:black;
+}
+
+/*==========================
+RESPONSIVE
+==========================*/
+
+@media(max-width:991px){
+.contact-card{
+flex-direction:column-reverse;
+text-align:center;
+padding:35px;
+}
+
+.contact-photo{
+width:250px;
+}
+
+.contact-left h2{
+font-size:34px;
+}
+}
+</style>
+</head>
+
+
+
+
+
+
+<body>
+
+<header class="navbar">
+<div class="logo">
+📖 EZEKIELE AUSTRIA
+</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#gallery">Gallery</a>
+<a href="#about">Contact</a>
+</nav>
+</header>
+<section class="hero">
+<div class="hero-content">
+<div class="hero-text">
+<h1>
+Hi, I'm <span>Ezekiele Austria</span>
+</h1>
+<p>
+3RD YEAR STUDENT • FREELANCER
+</p>
+<p>Bachelor of Science in Information Technology
+</p>
+<p>
+Colegio de Sta. Teresa de Avila
+</p>
+<a href="#home" class="btn-main">
+Explore Portfolio
+</a>
+</div>
+<div class="hero-image">
+<img src="bgg.png">
+</div>
+</div>
+</section>
+
+<!-- HOME -->
+
+<h2 id="home" class="section-title">
+    Services Offered
+</h2>
+
+<section style="width:90%; max-width:1200px; margin:auto;">
+<div class="glass" style="padding:40px;">
+<div class="accordion" id="accordionExample">
+
+<!-- CARD 1 -->
+
+<div class="accordion-item bg-transparent border-0 mb-3">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" type="button"
+data-bs-toggle="collapse" data-bs-target="#collapseSix">
+☁️ Cloud Deployment
+</button>
+
+</h2>
+<div id="collapseSix" class="accordion-collapse collapse"
+data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<div class="service-box">
+<video controls>
+<source src="1stYr-5vid.mp4">
+</video>
+<div>
+
+<h3>Cloud Deployment</h3>
+<p>
+Store files and deploy applications securely using cloud computing technologies.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- CARD 2 -->
+
+<div class="accordion-item bg-transparent border-0 mb-3">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" type="button"
+data-bs-toggle="collapse"
+data-bs-target="#collapseSeven">
+💻 Website Development
+</button>
+
+</h2>
+<div id="collapseSeven" class="accordion-collapse collapse"
+data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<div class="service-box">
+<video controls>
+<source src="1stYr-6vid.mp4">
+</video>
+<video controls>
+<source src="1stYr-7vid.mp4">
+</video>
+<div>
+
+<h3>Website Development</h3>
+<p> Creating responsive websites with modern HTML, CSS, Bootstrap and JavaScript.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- CARD 3 -->
+
+<div class="accordion-item bg-transparent border-0 mb-3">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" type="button"
+data-bs-toggle="collapse"
+data-bs-target="#collapseEight">
+🖥 Hardware Maintenance
+</button>
+
+</h2>
+<div id="collapseEight" class="accordion-collapse collapse"
+data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<div class="service-box">
+<video controls>
+<source src="1stYr-9vid.mp4">
+</video>
+<video controls>
+<source src="1stYr-8vid.mp4">
+</video>
+<img src="1stYr-3pic.jfif">
+<div>
+
+<h3>Hardware Maintenance</h3>
+<p>
+Installing, troubleshooting and repairing computer hardware professionally.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- CARD 4 -->
+
+<div class="accordion-item bg-transparent border-0">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" type="button"
+data-bs-toggle="collapse"
+data-bs-target="#collapseNine">
+📸 Photographer
+</button>
+
+</h2>
+<div id="collapseNine" class="accordion-collapse collapse"
+data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<div class="service-box">
+<img src="1stYr-6pic.jfif">
+<div>
+
+<h3>Photography</h3>
+<p>
+Capturing memorable moments with creativity and high-quality composition.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===========================
+     GALLERY
+=========================== -->
+
+<h2 id="gallery" class="section-title">
+    Achievements, Trainings & Seminars
+</h2>
+<section style="width:90%;max-width:1200px;margin:auto  auto 80px;">
+<div class="glass gallery-card">
+<div id="carouselExampleInterval"
+class="carousel slide"
+data-bs-ride="carousel">
+
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img src="seminar1.png" class="certificate-img" alt="">
+</div>
+
+<div class="carousel-item">
+<img src="seminar2.png" class="certificate-img" alt="">
+</div>
+
+<div class="carousel-item">
+<img src="seminar3.png" class="certificate-img" alt="">
+</div>
+
+<div class="carousel-item">
+<img src="1stsem.png" class="certificate-img" alt="">
+</div>
+
+<div class="carousel-item">
+<img src="diploma.png" class="certificate-img" alt="">
+</div>
+
+<div class="carousel-item">
+<img src="recog.png" class="certificate-img" alt="">
+</div>
+
+<div class="carousel-item">
+<img src="teambuilding.png" class="certificate-img" alt="">
+</div>
+</div>
+
+<button class="carousel-control-prev"
+type="button"
+data-bs-target="#carouselExampleInterval"
+data-bs-slide="prev">
+<span class="carousel-control-prev-icon"></span>
+</button>
+
+<button class="carousel-control-next"
+type="button"
+data-bs-target="#carouselExampleInterval"
+data-bs-slide="next">
+<span class="carousel-control-next-icon"></span>
+</button>
+</div>
+</div>
+</section>
+
+
+<!--=========================
+CONTACT
+==========================-->
+
+<h2 id="about" class="section-title">
+    Contact Me
+</h2>
+<section style="width:90%;max-width:1200px;margin:auto auto 80px;">
+<div class="glass contact-card">
+<div class="contact-left">
+
+<h2>Let's Work Together</h2>
+<p>
+I'm available for freelance projects, website development,
+computer troubleshooting, photography, and other IT-related services.
+Feel free to contact me anytime.
+</p>
+
+<div class="contact-info">
+<div class="info-box">
+<h4>📘 Facebook</h4>
+<p>ZKL ASTR</p>
+</div>
+<div class="info-box">
+<h4>▶ YouTube</h4>
+<p>ZKL ASTR</p>
+</div>
+<div class="info-box">
+<h4>📞 Phone</h4>
+<p>0995-432-7138</p>
+</div>
+</div>
+</div>
+
+<div class="contact-right">
+<img src="bgg.png" class="contact-photo">
+</div>
+</div>
+</section>
+
+<!--=========================
+FOOTER
+==========================-->
+
+<footer>
+<p>
+© 2026 Ezekiele Austria
+<br>
+Bachelor of Science in Information Technology
+</p>
+</footer>
+<!-- Back To Top -->
+<a href="#" class="top-btn">
+⬆
+</a>
+
+<!-- ===========================
+LOADING SCREEN
+=========================== -->
+
+<div id="loader">
+    <div class="loader-circle"></div>
+    <h2>Loading Portfolio...</h2>
+</div>
+<script>
+
+// Loading Screen
+
+window.addEventListener("load",function(){ 
+setTimeout(function(){
+document.getElementById("loader").style.opacity="0";
+setTimeout(function(){
+document.getElementById("loader").style.display="none";
+},700);
+},1200);
+});
+
+// Active Navbar
+
+const sections=document.querySelectorAll("section");
+const navLinks=document.querySelectorAll("nav a");
+window.addEventListener("scroll",()=>{
+let current="";
+sections.forEach(section=>{
+const sectionTop=section.offsetTop-120;
+const sectionHeight=section.clientHeight;
+if(pageYOffset>=sectionTop){
+current=section.getAttribute("id");
+}
+});
+
+navLinks.forEach(link=>{
+link.classList.remove("active");
+if(link.getAttribute("href").includes(current)){
+link.classList.add("active");
+}
+});
+})
+
+// Reveal Animation
+const reveals=document.querySelectorAll(".glass");
+window.addEventListener("scroll",reveal);
+function reveal(){
+for(let i=0;i<reveals.length;i++){
+let windowHeight=window.innerHeight;
+let revealTop=reveals[i].getBoundingClientRect().top;
+let revealPoint=120;
+if(revealTop<windowHeight-revealPoint){
+reveals[i].classList.add("show");
+}
+}
+}
+
+reveal(); // Typing Animation
+const text="Hi, I'm Ezekiele Austria";
+let i=0;
+const heroTitle=document.querySelector(".hero-text h1");
+heroTitle.innerHTML="";
+
+function typing(){
+if(i<text.length){
+heroTitle.innerHTML+=text.charAt(i);
+i++;
+setTimeout(typing,70);
+}
+}
+typing();
+</script>
+
+<audio id="bgMusic" loop>
+    <source src="bgMusic.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+document.addEventListener("click", function startMusic() {
+    music.play();
+    document.removeEventListener("click", startMusic);
+});
+</script>
